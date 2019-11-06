@@ -164,7 +164,13 @@ HCURSOR CTema2Dlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
-
+int CMMDC(int w, int z)
+{
+	if (!z) {
+		return w;
+	}
+	return CMMDC(z, w % z);
+}
 
 void CTema2Dlg::OnBnClickedcalculeaza()
 {
@@ -220,18 +226,22 @@ void CTema2Dlg::OnBnClickedcalculeaza()
 	CString Text;
 	int x = A;
 	int y = B;
-	int w=x, z=y;
-	while (x != y) {
-		if (x > b) {
-			x = x - y;
-		}
-		else {
-			y = y - x;
-		}
+	if (x == y / 2) {
+		Text.Format((LPCWSTR)L"1/2");
+		AfxMessageBox(Text);
+		return;
 	}
-	w = w / x;
-	z = z / y;
-	Text.Format((LPCWSTR)L"%d/%d", w, z);
+	int cd = CMMDC(x,y);
+	if (cd == 1) {
+		Text.Format((LPCWSTR)L"%d/%d", x, y);
+		AfxMessageBox(Text);
+		return;
+	}
+	else {
+		x = x / cd;
+		y = y / cd;
+	}
+	Text.Format((LPCWSTR)L"%d/%d", x, y);
 	AfxMessageBox(Text);
 	UpdateData(FALSE);
 }
