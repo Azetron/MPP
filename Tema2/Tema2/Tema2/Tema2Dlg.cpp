@@ -166,7 +166,7 @@ HCURSOR CTema2Dlg::OnQueryDragIcon()
 
 int CMMDC(int w, int z)
 {
-	if (!z) {
+	if (z == 0) {
 		return w;
 	}
 	return CMMDC(z, w % z);
