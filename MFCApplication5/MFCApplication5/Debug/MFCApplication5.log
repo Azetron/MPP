@@ -1,0 +1,3 @@
+﻿  MFCApplication5Dlg.cpp
+C:\Users\valen\source\repos\MFCApplication5\MFCApplication5\MFCApplication5Dlg.cpp(188,8): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  MFCApplication5.vcxproj -> C:\Users\valen\source\repos\MFCApplication5\Debug\MFCApplication5.exe
