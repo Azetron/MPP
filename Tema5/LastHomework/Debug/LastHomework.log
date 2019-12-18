@@ -1,0 +1,3 @@
+﻿  LastHomeworkDlg.cpp
+C:\Users\valen\OneDrive\Desktop\LastHomework\LastHomework\LastHomeworkDlg.cpp(337,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  LastHomework.vcxproj -> C:\Users\valen\OneDrive\Desktop\LastHomework\Debug\LastHomework.exe
